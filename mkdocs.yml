@@ -1,0 +1,96 @@
+site_name: Small Example
+site_description: 'Small example to reproduce an issue.'
+docs_dir: 'site/content'
+site_dir: 'docs'
+extra_css:
+  - stylesheets/extra.css
+extra:
+  generator: true
+  alternate:
+    - name: English
+      link: ./en/
+      lang: en
+      site_name: Small Example
+    - name: Português
+      link: ./pt/
+      lang: pt
+      site_name: Pequeno Exemplo
+
+nav:
+  - Home: index.md
+  - Documentation:
+    - CLI:
+      - cli/index.md
+      - Commands:
+        - machine:
+          - machine new: cli/machine-new.md
+          - machine remove: cli/machine-remove.md
+theme:
+  name: material
+  palette:
+    primary: black
+    accent: deep orange
+  font:
+    text: Poppins
+  icon:
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+  language: en
+  features:
+    - tabs
+    - toc.follow
+    - navigation.path
+    - navigation.top
+    - navigation.footer
+    - navigation.tabs
+    - navigation.indexes
+    - content.tabs.link
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+    - search.share
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - codehilite
+  - pymdownx.details
+  - pymdownx.keys
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+plugins:
+  - search
+  - i18n:
+      docs_structure: folder
+      default_language: en
+      # to speed up development build uncomment the line below
+      # default_language_only: true
+      languages:
+        en: English
+        pt: Portuguese
+      material_alternate: true
+      nav_translations:
+        pt:
+          Home: Início
+          Documentation: Documentação
