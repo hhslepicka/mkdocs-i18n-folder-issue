@@ -3,9 +3,8 @@ name: Publish Documentation
 on:
   workflow_dispatch:
   push:
-  pull_request:
     branches:
-      - '**'
+      - "main"
 
 jobs:
   deploy:
