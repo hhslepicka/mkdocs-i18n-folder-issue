@@ -82,7 +82,7 @@ markdown_extensions:
 plugins:
   - search
   - i18n:
-      docs_structure: folder
+      # docs_structure: folder
       default_language: en
       # to speed up development build uncomment the line below
       # default_language_only: true
